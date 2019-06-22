@@ -1,0 +1,43 @@
+// If you want to override variables do it here
+@import "variables";
+
+// Import styles
+@import "~@coreui/coreui/scss/coreui";
+
+// If you want to add something do it here
+@import "custom";
+@font-face {
+    font-family: HelveticaNeue-Light;
+    src: url("assets/fonts/HelveticaNeue-Light.otf") format("opentype");
+}
+@font-face {
+    font-family: Avenir-Black;
+    src: url("assets/fonts/Avenir-Black.otf") format("opentype");
+}
+@font-face {
+    font-family: GoogleSans-Regular;
+    src: url("assets/fonts/ProductSans-Regular.woff") format("woff");
+}
+@font-face {
+    font-family: GoogleSans-Medium;
+    src: url("assets/fonts/ProductSans-Medium.woff") format("woff");
+}
+@font-face {
+    font-family: GoogleSans-Bold;
+    src: url("assets/fonts/ProductSans-Bold.woff") format("woff");
+}
+@font-face{
+    font-family: Avenir Next;
+    src: url("assets/fonts/Avenir-Next-LT-Pro-Demi-Condensed.ttf");
+}
+app-header{
+    background: #fffffe!important;
+}
+app-sidebar, .sidebar .nav-link.active{
+    background: #002837!important;
+}
+.pagination{
+    justify-content: center;
+}
+
+

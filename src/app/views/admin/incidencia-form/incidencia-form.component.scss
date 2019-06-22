@@ -1,0 +1,29 @@
+.content_card{
+    border:1px solid #D8DBDE;
+    margin-bottom:3%;
+    padding-bottom:2%;
+    &-header{
+        background: #F0F3F5;
+        font-size: 18px;
+        padding-left: 10px;
+        border-bottom:1px solid #D8DBDE;
+    }
+    &_body{
+        padding-left:2%;
+        padding-right: 2%;
+        padding-top:3%;
+        font-family: GoogleSans-Regular;
+        font-size:14px;
+        border-bottom: 1px solid #D8DBDE;
+        padding-bottom: 2%;
+    }
+    &_table{
+        margin-top: 5% !important;
+        width: 95%;
+        margin:auto;
+        text-align: center;
+    }
+}
+.back-card{
+    margin-left: 1% !important;
+}

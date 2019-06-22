@@ -1,0 +1,214 @@
+<div class="animated fadeIn">
+  <div class="content_card">
+    <div class="content_card-header">Prospectos - Ganados</div>
+   
+<div class="content_card_table table-responsive-sm">
+  <table class="table table-striped" [mfData]="listaleads" #mf="mfDataTable" [mfRowsOnPage]="5">
+    <thead>
+      <tr>
+        <th>
+          <mfDefaultSorter by="name">#</mfDefaultSorter>
+        </th>
+        <th>
+          <mfDefaultSorter by="name">Prospecto</mfDefaultSorter>
+        </th>
+        <th>
+          <mfDefaultSorter by="email">Fase</mfDefaultSorter>
+        </th>
+        <th>
+          <mfDefaultSorter by="email">Descipción</mfDefaultSorter>
+        </th>
+        <th>
+          <mfDefaultSorter by="email">Teléfono</mfDefaultSorter>
+        </th>
+        <th>
+          <mfDefaultSorter by="email">Correo</mfDefaultSorter>
+        </th>
+        <th>
+            <mfDefaultSorter by="email">Acción</mfDefaultSorter>
+          </th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let item of mf.data">
+        <td>{{item.id_plan_membresia}}</td>
+        <td>{{item.membresia}}</td>
+        <td >{{item.cantidad_distritos}}</td>
+        <td>{{item.tiempo_plan}}</td>
+        <td>{{item.precio}}</td>
+        <td>
+          <div class="row">
+            <div class="col-md-4 col-sm-12">
+              <button type="button" class="btn btn-block btn-primary btn-sm" (click)="infoModal.show(); enviar(item)" >Ver</button>
+            </div>
+            <div class="col-md-4 col-sm-12">
+              <button type="button" class="btn btn-block btn-warning btn-sm"  (click)="warningModal.show(); enviar(item)">Editar</button>
+            </div>
+
+            <div class="col-md-4 col-sm-12">
+                <label class="switch switch-label switch-pill switch-outline-success-alt" >
+                  <input [checked]="item.estado" class="switch-input" type="checkbox"  (click)="enviar(item); cambiarEstado()">
+                  <span class="switch-slider" data-checked="✓" data-unchecked="✕" >
+                  </span>
+                </label>
+            </div>
+          </div>
+        </td>
+      </tr>
+      <tr >
+        <td>01</td>
+        <td>Juan Perez Salazar</td>
+        <td >Lead</td>
+        <td>Solicito mallas</td>
+        <td>98654721</td>
+        <td>Juan@gmail.com</td>
+        <td>
+          <div class="row">
+            <div class="col-md-12 col-sm-12">
+              <button type="button" class="btn btn-block btn-primary btn-sm" >Procesar</button>
+            </div>
+          </div>
+        </td>
+      </tr>
+      <tr >
+          <td>02</td>
+          <td>Juan Perez Salazar</td>
+          <td >Lead</td>
+          <td>Solicito mallas</td>
+          <td>98654721</td>
+          <td>Juan@gmail.com</td>
+          <td>
+            <div class="row">
+              <div class="col-md-12 col-sm-12">
+                <button type="button" class="btn btn-block btn-primary btn-sm" >Procesar</button>
+              </div>
+            </div>
+          </td>
+        </tr>
+        <tr >
+            <td>03</td>
+            <td>Juan Perez Salazar</td>
+            <td >Lead</td>
+            <td>Solicito mallas</td>
+            <td>98654721</td>
+            <td>Juan@gmail.com</td>
+            <td>
+              <div class="row">
+                <div class="col-md-12 col-sm-12">
+                  <button type="button" class="btn btn-block btn-primary btn-sm" >Procesar</button>
+                </div>
+              </div>
+            </td>
+          </tr>
+    </tbody>
+    <tfoot>
+      <tr>
+        <td colspan="6">
+          <mfBootstrapPaginator></mfBootstrapPaginator>
+        </td>
+      </tr>
+    </tfoot>
+  </table>
+  <div class="row back_card">
+      <div class="col-md-3 col-sm-12">
+          <button  type="button" class="btn btn-block btn-primary btn-sm" (click)="infoModal.show();">Registrar Nuevo</button>
+      </div>
+</div>
+</div>
+</div>
+</div>
+<div bsModal #infoModal="bs-modal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-info" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h4 class="modal-title">Prospecto</h4>
+          <button type="button" class="close" (click)="infoModal.hide()" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+            <div class="container cont-modal">
+              <!--inicio fila-->
+              <div class="row"> <h5>DATOS</h5></div>
+            <div class="row">
+                <div class="col-6">
+                      <div class="form-group row label-modal">
+                          <label class="col-4 col-form-label"><strong>Nombre:</strong></label>
+                          <input type="text" class="form-control col-sm-6" [(ngModel)]="membresia_datos_edit.membresia" value="{{membresia_datos_edit.membresia}}">
+                      </div>
+                      <div class="form-group row label-modal">
+                          <label class="col-4 col-form-label"><strong>A. Paterno:</strong></label>
+                          <input type="text" class="form-control col-sm-6" [(ngModel)]="membresia_datos_edit.membresia" value="{{membresia_datos_edit.membresia}}">
+                      </div>
+                      <div class="form-group row label-modal">
+                          <label class="col-4 col-form-label"><strong>A. Materno:</strong></label>
+                          <input type="text" class="form-control col-sm-6" [(ngModel)]="membresia_datos_edit.membresia" value="{{membresia_datos_edit.membresia}}">
+                      </div>
+                  </div>
+                  <div class="col-6">
+                      <div class="form-group row label-modal">
+                          <label class="col-4 col-form-label"><strong>Correo:</strong></label>
+                          <input type="text" class="form-control col-sm-6" [(ngModel)]="membresia_datos_edit.membresia" value="{{membresia_datos_edit.membresia}}">
+
+                        </div>
+                        <div class="form-group row label-modal">
+                            <label class="col-4 col-form-label"><strong>Telefono:</strong></label>
+                            <input type="text" class="form-control col-sm-6" [(ngModel)]="membresia_datos_edit.membresia" value="{{membresia_datos_edit.membresia}}">
+                  
+                        </div>
+                        <div class="form-group row label-modal">
+                          <label class="col-4 col-form-label"><strong>Descripción:</strong></label>
+                          <input type="text-area" class="form-control col-sm-6" [(ngModel)]="membresia_datos_edit.membresia" value="{{membresia_datos_edit.membresia}}">
+
+                        </div>
+                    </div>
+                  </div>
+<hr>
+                  <div class="row">
+                      <div class="col-6">
+                          <div class="form-group row label-modal">
+                              <h6>Registro Actividad</h6>
+                            </div>
+                          <div class="form-group row label-modal">
+                              <label class="col-4 col-form-label"><strong>Actividad:</strong></label>
+                              <input type="text" class="form-control col-sm-6" [(ngModel)]="membresia_datos_edit.membresia" value="{{membresia_datos_edit.membresia}}">
+                          </div>
+                          <div class="form-group row label-modal">
+                              <label class="col-4 col-form-label"><strong>Observaciones:</strong></label>
+                              <input type="text-area" class="form-control col-sm-6" [(ngModel)]="membresia_datos_edit.membresia" value="{{membresia_datos_edit.membresia}}">
+                          </div>
+                        </div>
+                        <div class="col-6">
+                          <div class="form-group row label-modal">
+                            <h6>Programación</h6>
+                          </div>
+                            <div class="form-group row label-modal">
+                                <label class="col-4 col-form-label"><strong>Fecha:</strong></label>
+                                <input class="form-control col-sm-6 " placeholder="date" type="date">
+                            </div>
+                            <div class="form-group row label-modal">
+                              <label class="col-4 col-form-label"><strong>Hora:</strong></label>
+                              <input class="form-control col-sm-6" type="time" id="exampleInput" name="input" ng-model="example.value"
+                                placeholder="HH:mm:ss" min="08:00:00" max="17:00:00" >
+                          </div>
+                          <div class="form-group row label-modal">
+                            <label class="col-sm-4 col-form-label"><strong>Fase:</strong></label>
+                            <select class="form-control col-sm-6" (change)="getSedes()" [(ngModel)]="id_afiliado" >
+                                <option value="0">Contactado</option>
+                                <option  value="1">Negociado</option>
+                                <option  value="2">Ganado</option>
+                              </select>
+                      </div>
+                          </div>
+                        </div>
+                  <!--fin de 1ra fila-->
+                </div>
+  
+        
+      </div><!-- /.modal-content -->
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary" (click)="infoModal.hide()">Close</button>
+      </div>
+    </div><!-- /.modal-dialog -->
+  </div><!-- /.modal -->
+  </div>

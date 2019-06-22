@@ -1,0 +1,59 @@
+<div class="animated fadeIn">
+  <div class="content_card">
+    <div class="content_card-header">Registrar Trabajador</div>
+    <div class="content_card_body">
+      <div class="row">
+        <div class="col-sm-6">
+          <div class="form-group">
+            <label>Nombre</label>
+            <input class="form-control" type="text" placeholder="" [(ngModel)]="dato.nombre" required >
+          </div>
+          <div class="form-group">
+            <label>Apellido Paterno</label>
+            <input class="form-control" type="text" placeholder="" [(ngModel)]="datoreserva.apellidop" required >
+          </div>
+          <div class="form-group">
+            <label>Apellido Materno</label>
+            <input class="form-control" type="text" placeholder="" [(ngModel)]="datoreserva.apellidom" required >
+          </div>
+          <div class="form-group">
+            <label>DNI</label>
+            <input class="form-control" type="number" placeholder="" [(ngModel)]="dato.dni" required >
+          </div>
+          
+        </div>
+        <div class="col-sm-6">
+          <div class="form-group">
+            <label>Telefono</label>
+            <input class="form-control" type="number" placeholder="" [(ngModel)]="dato.telefono"  required >
+          </div>
+          <div class="form-group">
+            <label>Correo</label>
+            <input class="form-control" type="text" placeholder="" [(ngModel)]="dato.correo" required>
+          </div>
+          <div class="form-group">
+            <label>Rol</label>
+            <select class="form-control" [(ngModel)]="usuario.rol" >
+              <option value="0">Seleccione</option>
+              <option  value="1">Administrador</option>
+              <option  value="2">Técnico</option>
+            </select>
+            </div>
+        </div>
+        <div class="col-md-12">
+          <div class="row back-card">
+            <div class="form-check col-8">
+            </div>
+            <div class="col-md-2 col-6">
+              <button type="button" class="btn btn-block btn-primary"  (click)="limpiar()">Cancelar</button>
+            </div>
+            <div class="col-md-2 col-6">
+              <button type="button" class="btn btn-block btn-primary"  (click)="savetrabajador()">Registrar</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+  </div>
+</div>

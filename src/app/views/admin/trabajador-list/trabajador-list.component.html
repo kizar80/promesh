@@ -1,0 +1,141 @@
+<div class="animated fadeIn">
+  <div class="content_card">
+    <div class="content_card-header">Listar Trabajadores</div>
+   
+<div class="content_card_table table-responsive-sm">
+  <table class="table table-striped" [mfData]="listaTrabajadores" #mf="mfDataTable" [mfRowsOnPage]="5">
+    <thead>
+      <tr>
+        <th>
+          <mfDefaultSorter by="name">#</mfDefaultSorter>
+        </th>
+        <th>
+          <mfDefaultSorter by="name">Trabajador</mfDefaultSorter>
+        </th>
+        <th>
+          <mfDefaultSorter by="email">Rol</mfDefaultSorter>
+        </th>
+        <th>
+          <mfDefaultSorter by="email">DNI</mfDefaultSorter>
+        </th>
+        <th>
+          <mfDefaultSorter by="email">Usuario</mfDefaultSorter>
+        </th>
+        <th>
+          <mfDefaultSorter by="email">Acción</mfDefaultSorter>
+        </th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let item of mf.data">
+        <td>{{item.id_plan_membresia}}</td>
+        <td>{{item.membresia}}</td>
+        <td >{{item.cantidad_distritos}}</td>
+        <td>{{item.tiempo_plan}}</td>
+        <td>{{item.precio}}</td>
+        <td>
+          <div class="row">
+            <div class="col-md-4 col-sm-12">
+              <button type="button" class="btn btn-block btn-primary btn-sm" (click)="infoModal.show(); enviar(item)" >Ver</button>
+            </div>
+            <div class="col-md-4 col-sm-12">
+              <button type="button" class="btn btn-block btn-warning btn-sm"  (click)="warningModal.show(); enviar(item)">Editar</button>
+            </div>
+
+            <div class="col-md-4 col-sm-12">
+                <label class="switch switch-label switch-pill switch-outline-success-alt" >
+                  <input [checked]="item.estado" class="switch-input" type="checkbox"  (click)="enviar(item); cambiarEstado()">
+                  <span class="switch-slider" data-checked="✓" data-unchecked="✕" >
+                  </span>
+                </label>
+            </div>
+          </div>
+        </td>
+      </tr>
+      <tr >
+        <td>01</td>
+        <td>Juan Perez Salazar</td>
+        <td >Administrador</td>
+        <td>77896542</td>
+        <td>JPEREZ</td>
+        <td>
+          <div class="row">
+            <div class="col-md-4 col-sm-12">
+              <button type="button" class="btn btn-block btn-primary btn-sm" >Ver</button>
+            </div>
+            <div class="col-md-4 col-sm-12">
+              <button type="button" class="btn btn-block btn-warning btn-sm" >Editar</button>
+            </div>
+
+            <div class="col-md-4 col-sm-12">
+                <label class="switch switch-label switch-pill switch-outline-success-alt" >
+                  <input checked class="switch-input" type="checkbox">
+                  <span class="switch-slider" data-checked="✓" data-unchecked="✕" >
+                  </span>
+                </label>
+            </div>
+          </div>
+        </td>
+      </tr>
+      <tr >
+        <td>02</td>
+        <td>Miriam Torres Hurtado</td>
+        <td >Administrador</td>
+        <td>78596542</td>
+        <td>MTORRES</td>
+        <td>
+          <div class="row">
+            <div class="col-md-4 col-sm-12">
+              <button type="button" class="btn btn-block btn-primary btn-sm" >Ver</button>
+            </div>
+            <div class="col-md-4 col-sm-12">
+              <button type="button" class="btn btn-block btn-warning btn-sm" >Editar</button>
+            </div>
+
+            <div class="col-md-4 col-sm-12">
+                <label class="switch switch-label switch-pill switch-outline-success-alt" >
+                  <input checked class="switch-input" type="checkbox">
+                  <span class="switch-slider" data-checked="✓" data-unchecked="✕" >
+                  </span>
+                </label>
+            </div>
+          </div>
+        </td>
+      </tr>
+      <tr >
+        <td>03</td>
+        <td>José Miguel Quinto Guevara</td>
+        <td >Técnico</td>
+        <td>77897842</td>
+        <td>JQUINTO</td>
+        <td>
+          <div class="row">
+            <div class="col-md-4 col-sm-12">
+              <button type="button" class="btn btn-block btn-primary btn-sm" >Ver</button>
+            </div>
+            <div class="col-md-4 col-sm-12">
+              <button type="button" class="btn btn-block btn-warning btn-sm" >Editar</button>
+            </div>
+
+            <div class="col-md-4 col-sm-12">
+                <label class="switch switch-label switch-pill switch-outline-success-alt" >
+                  <input checked class="switch-input" type="checkbox">
+                  <span class="switch-slider" data-checked="✓" data-unchecked="✕" >
+                  </span>
+                </label>
+            </div>
+          </div>
+        </td>
+      </tr>
+    </tbody>
+    <tfoot>
+      <tr>
+        <td colspan="6">
+          <mfBootstrapPaginator></mfBootstrapPaginator>
+        </td>
+      </tr>
+    </tfoot>
+  </table>
+</div>
+</div>
+</div>
